@@ -5,6 +5,7 @@ const dotenv = require('dotenv')
 
 //import routes
 const authRouter = require('./routes/auth')
+const postRoutes = require('./routes/posts');
 
 dotenv.config();
 
@@ -16,5 +17,6 @@ app.use(express.json());
 
 //route middleware
 app.use('/api/user', authRouter);
+app.use('/api/posts', postRoutes);
 
 app.listen(8000, () => console.log('Connected to port 8000'));
